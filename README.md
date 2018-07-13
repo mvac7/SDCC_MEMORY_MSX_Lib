@@ -26,7 +26,7 @@ History of versions:
 ## 1. Introduction
 
 This project is an Open Source library with basic functions for Z80's memory 
-access functions and page slots selection functions.
+and page slots/sublots access.
   
 Use them for developing MSX applications using Small Device C Compiler (SDCC).
 
