@@ -15,7 +15,7 @@ This project is an Open Source library with basic functions for Z80's memory and
   
 Use them for developing MSX applications using Small Device C Compiler (SDCC).
 
-The source code includes an application to test or learn how to use the library. 
+In the source code (\examples), you can find applications for testing and learning purposes. 
 
 In the header file there is a definition of boolean type, need for the functions.
 This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
