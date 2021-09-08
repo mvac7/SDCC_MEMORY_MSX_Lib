@@ -1,5 +1,5 @@
 /* =============================================================================
-   SDCC MSX Z80 Memory Functions Library (object type)
+   Memory MSX SDCC Library (fR3eL Project)
    Version: 1.1
    Date: 28/06/2018
    Author: mvac7/303bcn
@@ -10,14 +10,15 @@
    mail: mvac7303b@gmail.com
 
    Description:
-     Memory access functions
+     Basic functions to access the memory of the Z80 and functions for the 
+     selection of slots and subslots of the MSX
    
    History of versions:
    - v1.1 (28/06/2018)< add slot access functions
    - v1.0 (01/03/2016) First version  
 ============================================================================= */
 
-#include "../include/memory.h"
+#include "../include/memory_MSX.h"
 #include "../include/msxSystemVars.h"
 
 #define  PPIregA 0xA8
@@ -31,7 +32,7 @@
    Input    : [unsigned int] RAM address
    Output   : [char] value
 ============================================================================= */
-char PEEK(unsigned int address)
+char PEEK(unsigned int address) __naked
 {
 address;
 __asm
@@ -46,6 +47,7 @@ __asm
   ld   L,A
 
   pop  IX
+  ret
 __endasm;
 }
 
@@ -58,7 +60,7 @@ __endasm;
    Input    : [unsigned int] RAM address
    Output   : [unsigned int] value
 ============================================================================= */
-unsigned int PEEKW(unsigned int address)
+unsigned int PEEKW(unsigned int address) __naked
 {
 address;
 __asm
@@ -74,6 +76,7 @@ __asm
   ex   DE,HL
   
   pop  IX
+  ret
 __endasm;
 }
 
@@ -87,7 +90,7 @@ __endasm;
               [char] value
    Output   : -
 ============================================================================= */
-void POKE(unsigned int address, char value)
+void POKE(unsigned int address, char value) __naked
 {
 address;value;
 __asm
@@ -101,6 +104,7 @@ __asm
   ld   (HL),A
   
   pop  IX
+  ret
 __endasm;
 }
 
@@ -114,7 +118,7 @@ __endasm;
               [unsigned int] value
    Output   : -
 ============================================================================= */
-void POKEW(unsigned int address, unsigned int value)
+void POKEW(unsigned int address, unsigned int value) __naked
 {
 address;value;
 __asm
@@ -135,6 +139,7 @@ __asm
   ld   (HL),A
   
   pop  IX
+  ret
 __endasm;
 }
 
@@ -149,7 +154,7 @@ __endasm;
               [unsigned int] length 
    Output   : -
 ============================================================================= */
-void CopyRAM(unsigned int source, unsigned int destination, unsigned int length)
+void CopyRAM(unsigned int source, unsigned int destination, unsigned int length) __naked
 {
 source;destination;length;
 __asm
@@ -169,6 +174,7 @@ __asm
   ldir
   
   pop  IX
+  ret
 __endasm;
 }
 
@@ -183,7 +189,7 @@ __endasm;
               [char] value
    Output   : -
 ============================================================================= */
-void FillRAM(unsigned int address, unsigned int length, char value)
+void FillRAM(unsigned int address, unsigned int length, char value) __naked
 {
 address;length;value;
 __asm 
@@ -210,6 +216,7 @@ __asm
   ldir
   
   pop  IX
+  ret
 __endasm;
 }
 
@@ -222,7 +229,7 @@ __endasm;
    Input    : [char] page (0-3)              
    Output   : [char] slot (0-3)   
 ============================================================================= */
-char GetPageSlot(char page)
+char GetPageSlot(char page) __naked
 {
 page;
 __asm 
@@ -232,14 +239,14 @@ __asm
    
   di
   
-  ld   A,4(IX) ;slot
+  ld   A,4(IX)        ;slot
   and  #0x03
   
 ;  cp   #4
-;  jr   NC,PAGEERROR   ;A>=4
+;  jr   NC,PAGEERROR  ;A>=4
   
   or   A              ;A=0?
-  jr   Z,PAGE0 ;if (A==0) GOTO PAGE0
+  jr   Z,PAGE0        ;if (A==0) GOTO PAGE0
   
   ld   B,A
   in   A,(PPIregA)
@@ -255,7 +262,7 @@ PAGE0:
   
 getPageValue:  
   and  #0x03
-  ld   L,A ;<--- output value
+  ld   L,A      ;<--- output value
   
   ei
   
@@ -264,9 +271,8 @@ getPageValue:
 ;PAGEERROR:
 ;  ld   L,#128  ;<-- error code
 
-
   pop  IX
-
+  ret
 __endasm;
 }
 
@@ -279,7 +285,7 @@ __endasm;
    Input    : [char] page (0-3)              
    Output   : [char] subslot (0-3)   
 ============================================================================= */
-char GetPageSubslot(char page)
+char GetPageSubslot(char page) __naked
 {
 page;
 __asm 
@@ -287,14 +293,14 @@ __asm
   ld   IX,#0
   add  IX,SP
   
-  ld   A,4(IX) ;slot
+  ld   A,4(IX)      ;slot
   and  #0x03
   
-  or   A              ;A=0?
-  jr   Z,PAGE0SS ;if (A==0) GOTO PAGE0
+  or   A            ;A=0?
+  jr   Z,PAGE0SS    ;if (A==0) GOTO PAGE0
   
   ld   B,A
-  ld   A,(#SLTSL)  ;0xFFFF
+  ld   A,(#SLTSL)   ;0xFFFF
   cpl
   ; for B
 nextRRCASS:
@@ -312,7 +318,7 @@ getPageValueSS:
   ld   L,A ;<--- output value
   
   pop  IX
-
+  ret
 __endasm;
 }
 
@@ -334,7 +340,7 @@ __endasm;
                page 2 > 0x8000 - 0xBFFF
                page 3 > 0xC000 - 0xFFFF
 ============================================================================= */
-void SetPageSlot(char page, char slot)
+void SetPageSlot(char page, char slot) __naked
 {
 page;slot;
 __asm 
@@ -402,7 +408,7 @@ nextPage2:
   
 noRLCA:
   ex   AF,AF
-  ;ret (add SDCC in endasm) 
+  ret 
 ;------------------------------------------------------------------- END SETSLOT    
 __endasm;
 }
@@ -428,7 +434,7 @@ __endasm;
                4-5 Subslot for page 2 (#8000-#BFFF)
                6-7 Subslot for page 3 (#C000-#FFFF)
 ============================================================================= */
-void SetPageSubslot(char page, char subslot)
+void SetPageSubslot(char page, char subslot) __naked
 {
 page;subslot;
 __asm 
@@ -452,6 +458,7 @@ __asm
   ld   (#SLTSL),A
   
   pop  IX
+  ret
 __endasm;
 }
 
@@ -471,7 +478,7 @@ __endasm;
                0xFCC4 Slot 3 expanded?
                Yes = 0x80 ; No = 0
 ============================================================================= */
-boolean IsExpanded(char slot)
+boolean IsExpanded(char slot) __naked
 {
 slot;
 __asm 
@@ -495,6 +502,7 @@ __asm
 
 expandedExit:
   pop  IX
+  ret
 __endasm;
 }
 

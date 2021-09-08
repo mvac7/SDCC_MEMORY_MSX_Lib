@@ -1,5 +1,5 @@
 /* =============================================================================
-   Test SDCC Memory Functions Library.
+   Test Memory MSX SDCC Library
    Version: 1.1
    Date: 28/06/2018
    Author: mvac7/303bcn
@@ -23,7 +23,7 @@
 #include "../include/msxBIOS.h"
 
 #include "../include/textmode.h"
-#include "../include/memory.h"
+#include "../include/memory_MSX.h"
 
 
 
@@ -45,7 +45,7 @@
 
 void test();
 
-char inkey();
+char INKEY();
 void WAIT(uint cicles);
 void PressKey();
 
@@ -53,7 +53,7 @@ void PressKey();
 
 // constants  ------------------------------------------------------------------
 
-const char text01[] = "Test SDCC Z80 Memory Lib";
+const char text01[] = "Test Memory MSX SDCC Lib";
 const char text02[] = "v1.1 (28/06/2018)";
 
 const char stringOK[] = " Ok";
@@ -104,12 +104,16 @@ __endasm;*/
 /* =============================================================================
 One character input (waiting)
 ============================================================================= */
-char inkey(){
+char INKEY() __naked
+{
 __asm
-   push IX   
+   push IX
+      
    call CHGET
    ld   L,A
+   
    pop  IX
+   ret
 __endasm;
 }
 
@@ -378,5 +382,5 @@ void PressKey()
 {
   PRINT("\n\n");
   PRINT(msg01);
-  inkey();
+  INKEY();
 }

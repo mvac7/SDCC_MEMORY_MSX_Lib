@@ -7,7 +7,9 @@ Format: C Object (SDCC .rel)
 Programming language: C and Z80 assembler
 ```
 
+<br/>
 
+---
 
 ## Description
 
@@ -27,21 +29,27 @@ This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MS
 
 Enjoy it!   
 
+<br/>
 
+---
 
 ## History of versions
 
 * v1.1 (28/06/2018)<Add slot access functions
 * v1.0 (01/03/2016) First version
 
+<br/>
 
+---
 
 ## Requirements
 
-* Small Device C Compiler (SDCC) v3.9 http://sdcc.sourceforge.net/
+* Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
 * Hex2bin v2.5 http://hex2bin.sourceforge.net/
 
+<br/>
 
+---
 
 ## Functions
 
@@ -58,7 +66,9 @@ Enjoy it!
 * void **SetPageSubslot**(page, subslot) - Set a subslot on the indicated page (For expanded slots)
 
 
+<br/>
 
+---
 ## Acknowledgments
   
 I want to give a special thanks to all those who freely share their knowledge with the MSX developer community.
@@ -66,16 +76,19 @@ I want to give a special thanks to all those who freely share their knowledge wi
 * Avelino Herrera > [WEB](http://msx.atlantes.org/index_es.html)
 * Nerlaska > [Blog](http://albertodehoyonebot.blogspot.com.es)
 * Marq/Lieves!Tuore > [Marq](http://www.kameli.net/marq/) [Lieves!Tuore](http://www.kameli.net/lt/)
+* MSXKun/Paxanga soft > [(WEB)](http://paxangasoft.retroinvaders.com/)
 * [Fubukimaru](https://github.com/Fubukimaru) > [Blog](http://www.gamerachan.org/fubu/)
 * Andrear > [Blog](http://andrear.altervista.org/home/msxsoftware.php)
 * Ramones > [MSXblog](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [MSXbanzai](http://msxbanzai.tni.nl/dev/faq.html)
 * Sapphire/Z80ST > [WEB](http://z80st.auic.es/)
-* Fernando García > [youTube](https://www.youtube.com/user/bitvision)
+* Fernando García > [(Video Curso)](http://www.z80st.es/cursos/bitvision-assembler)
 * Eric Boez > [gitHub](https://github.com/ericb59)
 * MSX Assembly Page > [WEB](http://map.grauw.nl/resources/msxbios.php)
 * Portar MSX Tech Doc > [WEB](http://nocash.emubase.de/portar.htm)
 * MSX Resource Center > [WEB](http://www.msx.org/)
-* Karoshi MSX Community (RIP 2007-2020)
-* BlueMSX emulator >> [WEB](http://www.bluemsx.com/)
-* OpenMSX emulator >> [WEB](http://openmsx.sourceforge.net/)
+* Karoshi MSX Community > [(WEB)](http://karoshi.auic.es/)
+* BlueMSX emulator >> [(WEB)](http://www.bluemsx.com/)
+* OpenMSX emulator >> [(WEB)](http://openmsx.sourceforge.net/)
+* [WebMSX](https://webmsx.org/) emulator by Paulo A. Peccin >> [(gitHub)](https://github.com/ppeccin/webmsx)
+* fMSX emulator by Marat Fayzullin >> [WEB](https://fms.komkon.org/fMSX/)
 * Meisei emulator >> ?

@@ -6,6 +6,6 @@ echo MAKEDIR build
 md build
 :NEXTSTEP1
 echo Compiling Object
-sdcc -mz80 -c -o build\  src\memory.c
+sdcc -mz80 -c -o build\  src\memory_MSX.c
 pause
 
