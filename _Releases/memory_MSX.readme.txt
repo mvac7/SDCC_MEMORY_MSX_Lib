@@ -1,14 +1,10 @@
-SDCC MSX Z80 Memory Functions Library (object type)
+Memory MSX SDCC Library (fR3eL Project)
 Version: 1.1
 Date: 28/06/2018
-Author: mvac7/303bcn
+Author: mvac7
 Architecture: MSX
 Format: C Object (SDCC .rel)
 Programming language: C
-WEB: 
-mail: mvac7303b@gmail.com
-
-Doc version: 1.1 
 
 
 History of versions:
@@ -48,31 +44,43 @@ Index:
 
 This project is an Open Source library with basic functions for Z80's memory 
 and page slots/sublots access.
-
+  
 Use them for developing MSX applications using Small Device C Compiler (SDCC).
-  
-Includes an application for test and learning purposes.  
-  
-For more information about the MSX memory paging system, you can find the 
-MSX Assembly Page, in the points: Primary slot select register & Secondary slot 
-select register
-http://map.grauw.nl/resources/msx_io_ports.php#ppi
+
+In the source code (\examples), you can find applications for testing and 
+learning purposes. 
+
+In the header file there is a definition of boolean type, need for the functions.
+This type uses the values "true" or "false" in lowercase, which equals 1 and 0 
+respectively.
+
+For more information about the MSX memory paging system, you can find the in 
+the points: Primary slot select register & Secondary slot select register. 
+(MSX Assembly Page) >> http://map.grauw.nl/resources/msx_io_ports.php#ppi
+
+This library is part of the MSX fR3eL Project
+https://github.com/mvac7/SDCC_MSX_fR3eL
+
+Enjoy it! 
 
 
 
 --------------------------------------------------------------------------------
 2. Acknowledgments
   
-  Thanks for Info & help, to:
+  I want to give a special thanks to all those who freely share their knowledge 
+  with the MSX developer community.
 
   Avelino Herrera > http://msx.atlantes.org/index_es.html
   Nerlaska > http://albertodehoyonebot.blogspot.com.es
-  Fubu > http://www.gamerachan.org/fubu/
+  MSXKun/Paxanga soft > http://paxangasoft.retroinvaders.com/
+  Fubukimaru > http://www.gamerachan.org/fubu/
   Marq/Lieves!Tuore > http://www.kameli.net/lt/
-  Sapphire/Z80ST > http://z80st.auic.es/
-  Pentacour > http://pentacour.com/
-  JamQue/TPM > http://www.thepetsmode.com/
   Andrear > http://andrear.altervista.org/home/msxsoftware.php
+  Sapphire/Z80ST > http://z80st.auic.es/
+  Fernando García > http://www.z80st.es/cursos/bitvision-assembler
+  Eric Boez > https://github.com/ericb59
+  Ramones https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/
   Konamiman > https://www.konamiman.com
   MSX Assembly Page > http://map.grauw.nl/resources/msxbios.php
   Portar MSX Tech Doc > http://nocash.emubase.de/portar.htm
@@ -80,6 +88,8 @@ http://map.grauw.nl/resources/msx_io_ports.php#ppi
   Karoshi MSX Community > http://karoshi.auic.es/
   BlueMSX >> http://www.bluemsx.com/
   OpenMSX >> http://openmsx.sourceforge.net/
+  WebMSX emulator by Paulo A. Peccin >> https://github.com/ppeccin/webmsx
+  fMSX emulator by Marat Fayzullin >> https://fms.komkon.org/fMSX/
   Meisei  >> ?
 
 
@@ -87,10 +97,10 @@ http://map.grauw.nl/resources/msx_io_ports.php#ppi
 --------------------------------------------------------------------------------
 3. Requirements:
 
- * Small Device C Compiler (SDCC) v3.6 
+ * Small Device C Compiler (SDCC) v4.1 
    http://sdcc.sourceforge.net/
      
- * Hex2bin v2.2 
+ * Hex2bin v2.5 
    http://hex2bin.sourceforge.net/
 
 
