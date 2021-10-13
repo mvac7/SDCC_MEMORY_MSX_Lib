@@ -1,20 +1,19 @@
 /* =============================================================================
    Memory MSX SDCC Library (fR3eL Project)
-   Version: 1.1
-   Date: 28/06/2018
-   Author: mvac7/303bcn
+   Version: 1.2
+   Date: 29/09/2021
+   Author: mvac7
    Architecture: MSX
    Format: C Object (SDCC .rel)
-   Programming language: C
-   WEB: 
-   mail: mvac7303b@gmail.com
+   Programming language: C and z80 assembler
 
    Description:
      Basic functions to access the memory of the Z80 and functions for the 
      selection of slots and subslots of the MSX
    
    History of versions:
-   - v1.1 (28/06/2018)< add slot access functions
+   - v1.2 (29/09/2021)< small optimization in PEEK
+   - v1.1 (28/06/2018) add slot access functions
    - v1.0 (01/03/2016) First version  
 ============================================================================= */
 
@@ -40,11 +39,9 @@ __asm
   ld   IX,#0
   add  IX,SP
   
-  ld   L,4(ix)
-  ld   H,5(ix)
-  ld   A,(hl)
-
-  ld   L,A
+  ld   L,4(IX)
+  ld   H,5(IX)
+  ld   L,(HL)
 
   pop  IX
   ret
