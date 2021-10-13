@@ -7,9 +7,6 @@ Format: C Object (SDCC .rel)
 Programming language: C and Z80 assembler
 ```
 
-<br/>
-
----
 
 ## Description
 
@@ -56,24 +53,6 @@ Enjoy it!
 
 ---
 
-## Functions
-
-* char **PEEK**(address) - Read a 8 bit value from the RAM
-* unsigned int **PEEKW**(address) - Read a 16 bit value from the RAM
-* **POKE**(address,value) - Write an 8 bit value in RAM
-* **POKEW**(address,value) - Write an 16 bit value in RAM
-* **CopyRAM**(source, destination, length) - Copy a block of memory to another address
-* **FillRAM**(address,length,value) - Fills an area of the RAM with a value
-* char **GetPageSlot**(page) - Provide the slot of the indicated page
-* **SetPageSlot**(page, slot) - Set a slot on the indicated page
-* boolean **IsExpanded**(slot) - Returns if the slot is of the expanded type
-* char **GetPageSubslot**(page) - Provide the subslot of the indicated page (For expanded slots)
-* void **SetPageSubslot**(page, subslot) - Set a subslot on the indicated page (For expanded slots)
-
-
-<br/>
-
----
 ## Acknowledgments
   
 I want to give a special thanks to all those who freely share their knowledge with the MSX developer community.

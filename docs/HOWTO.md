@@ -160,7 +160,7 @@ Enjoy it!
 <tr><th>Function</th><td colspan=2>char GetPageSlot(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Slot (0-3)</td></tr>
-<tr><th>Example:</th><td colspan=2>char value;<br/>value = GetPageSlot(2);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>char value;<br/>value = GetPageSlot(2);</pre></td></tr>
 </table>
 
 
@@ -173,7 +173,7 @@ Enjoy it!
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>char slot;<br/>slot = GetPageSlot(1);<br/>SetPageSlot(2,slot);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><code><pre>char slot;<br/>slot = GetPageSlot(1);<br/>SetPageSlot(2,slot);</pre></code></td></tr>
 </table>
 
 
@@ -185,7 +185,7 @@ Enjoy it!
 <tr><th>Function</th><td colspan=2>boolean IsExpanded(slot)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td>[boolean]</td><td>true = Yes; false = No</td></tr>
-<tr><th>Example:</th><td colspan=2>if(IsExpanded(2)) PRINT("Yes");</code></td></tr>
+<tr><th>Example:</th><td colspan=2><code>if(IsExpanded(2)) PRINT("Yes");</code></td></tr>
 </table>
 
 
@@ -197,7 +197,7 @@ Enjoy it!
 <tr><th>Function</th><td colspan=2>char GetPageSubslot(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Subslot (0-3)</td></tr>
-<tr><th>Example:</th><td colspan=2>char subslot;<br/>subslot = GetPageSubslot(1);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>char subslot;<br/>subslot = GetPageSubslot(1);</pre></td></tr>
 </table>
             
 
@@ -210,11 +210,11 @@ Enjoy it!
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Subslot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>
+<tr><th>Example:</th><td colspan=2><pre>
 if(IsExpanded(3))
 {
   SetPageSlot(2,3);
   SetPageSubslot(2,1);
 }
-</code></td></tr>
+</pre></td></tr>
 </table>
