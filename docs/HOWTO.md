@@ -76,10 +76,10 @@ Enjoy it!
 <table>
 <tr><th colspan=3 align="left">PEEK</th></tr>
 <tr><td colspan=3>Read a 8 bit value from the memory.</td></tr>
-<tr><th>Function</th><td colspan=2>char PEEK(address)</td></tr>
+<tr><th>Function</th><td colspan=2>PEEK(address)</td></tr>
 <tr><th>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Value</td></tr>
-<tr><th>Example:</th><td colspan=2><code>char value;<br/>value = PEEK(0xE000);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>char value;<br/>value = PEEK(0xE000);</pre></td></tr>
 </table>
 
 
@@ -88,10 +88,10 @@ Enjoy it!
 <table>
 <tr><th colspan=3 align="left">PEEKW</th></tr>
 <tr><td colspan=3>Read a 16 bit value from the memory.</td></tr>
-<tr><th>Function</th><td colspan=2>unsigned int PEEKW(address)</td></tr>
+<tr><th>Function</th><td colspan=2>PEEKW(address)</td></tr>
 <tr><th>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><th>Output</th><td>[unsigned int]</td><td>Value</td></tr>
-<tr><th>Example:</th><td colspan=2><code>unsigned int value;<br/>value = PEEKW(0xE000);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>unsigned int value;<br/>value = PEEKW(0xE000);</pre></td></tr>
 </table>
 
             
@@ -104,7 +104,7 @@ Enjoy it!
 <tr><th rowspan=2>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><td>[char]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>POKE(0xE000,0xFF);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>POKE(0xE000,0xFF);</pre></td></tr>
 </table>
 
 
@@ -117,7 +117,7 @@ Enjoy it!
 <tr><th rowspan=2>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><td>[unsigned int]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>POKEW(0xE000,12345);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>POKEW(0xE000,12345);</pre></td></tr>
 </table>
 
             
@@ -131,7 +131,7 @@ Enjoy it!
 <tr><td>[unsigned int]</td><td>Destination RAM address</td></tr>
 <tr><td>[unsigned int]</td><td>Length</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>CopyRAM(0x0000,0xE000,128);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>CopyRAM(0x0000,0xE000,128);</pre></td></tr>
 </table>
 
 
@@ -145,7 +145,7 @@ Enjoy it!
 <tr><td>[unsigned int]</td><td>Length</td></tr>
 <tr><td>[char]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>FillRAM(0xE000,1234,0xFF);</code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>FillRAM(0xE000,1234,0xFF);</pre></td></tr>
 </table>
 
 
@@ -157,7 +157,7 @@ Enjoy it!
 <table>
 <tr><th colspan=3 align="left">GetPageSlot</th></tr>
 <tr><td colspan=3>Provide the slot of the indicated page.</td></tr>
-<tr><th>Function</th><td colspan=2>char GetPageSlot(page)</td></tr>
+<tr><th>Function</th><td colspan=2>GetPageSlot(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>char value;<br/>value = GetPageSlot(2);</pre></td></tr>
@@ -173,7 +173,7 @@ Enjoy it!
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code><pre>char slot;<br/>slot = GetPageSlot(1);<br/>SetPageSlot(2,slot);</pre></code></td></tr>
+<tr><th>Example:</th><td colspan=2><pre>char slot;<br/>slot = GetPageSlot(1);<br/>SetPageSlot(2,slot);</pre></td></tr>
 </table>
 
 
@@ -182,7 +182,7 @@ Enjoy it!
 <table>
 <tr><th colspan=3 align="left">IsExpanded</th></tr>
 <tr><td colspan=3>Returns if the slot is of the expanded type.</td></tr>
-<tr><th>Function</th><td colspan=2>boolean IsExpanded(slot)</td></tr>
+<tr><th>Function</th><td colspan=2>IsExpanded(slot)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td>[boolean]</td><td>true = Yes; false = No</td></tr>
 <tr><th>Example:</th><td colspan=2><code>if(IsExpanded(2)) PRINT("Yes");</code></td></tr>
@@ -194,7 +194,7 @@ Enjoy it!
 <table>
 <tr><th colspan=3 align="left">GetPageSubslot</th></tr>
 <tr><td colspan=3>Provide the subslot of the indicated page (For expanded slots)</td></tr>
-<tr><th>Function</th><td colspan=2>char GetPageSubslot(page)</td></tr>
+<tr><th>Function</th><td colspan=2>GetPageSubslot(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Subslot (0-3)</td></tr>
 <tr><th>Example:</th><td colspan=2><pre>char subslot;<br/>subslot = GetPageSubslot(1);</pre></td></tr>
