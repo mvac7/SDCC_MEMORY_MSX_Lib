@@ -62,7 +62,6 @@ Enjoy it!
 - [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
 
-
 <br/>
 
 ---
@@ -218,3 +217,11 @@ if(IsExpanded(3))
 }
 </pre></td></tr>
 </table>
+
+
+<br/>
+
+---
+
+![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png) 
+<br/>This document is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
