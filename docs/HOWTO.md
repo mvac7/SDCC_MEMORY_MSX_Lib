@@ -224,9 +224,9 @@ if(IsSlotExpanded(3))
 
 ## 4 References
 
-- Wiki > [Slots](https://www.msx.org/wiki/Slots) (by MSX Resource Center)
-- MSX I/O ports > [Programmable Peripheral Interface](https://map.grauw.nl/resources/msx_io_ports.php#ppi) (by MSX Assembly Page)
-- https://www.msx.org/forum/semi-msx-talk/emulation/primary-slots-and-secondary-slots)
+- Wiki > [Slots](https://www.msx.org/wiki/Slots) `MSX Resource Center`
+- MSX I/O ports > [Programmable Peripheral Interface](https://map.grauw.nl/resources/msx_io_ports.php#ppi) `MSX Assembly Page`
+- [Primary slots and secondary slots](https://www.msx.org/forum/semi-msx-talk/emulation/primary-slots-and-secondary-slots) (forum discussion) `MSX Resource Center`
 
 <br/>
 
