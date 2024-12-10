@@ -1,25 +1,17 @@
 # Memory MSX SDCC Library (fR3eL Project)
 
-```
-Author: mvac7
-Architecture: MSX
-Format: C Object (SDCC .rel)
-Programming language: C and Z80 assembler
-```
+| :--- | :--- |
+| Architecture | MSX |
+| Format | C Object (SDCC .rel) |
+| Programming language | C and Z80 assembler |
+
+<br/>
 
 ---
 
 ## Description
 
-Library with basic functions for Z80's memory and page slots/sublots access.
-
-In the header file there is a definition of boolean type, need for the functions.
-This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
-
-For more information about the MSX memory paging system, you can find the [MSX Assembly Page](http://map.grauw.nl/resources/msx_io_ports.php#ppi), 
-in the points: Primary slot select register & Secondary slot select register.
-
-This project is an Open Source library. You can add part or all of this code in your libraries/engines.
+This project provides two libraries for accessing the memory of MSX systems. 
 
 Use them for developing MSX applications using Small Device C Compiler (SDCC).
 
@@ -27,7 +19,9 @@ You can access the documentation here with [`How to use the library`](docs/HOWTO
 
 In the source code [`examples/`](examples/), you can find applications for testing and learning purposes.
 
-This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
+This project is an Open Source library. You can add part or all of this code in your libraries/engines.
+
+These libraries are part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
 
 Enjoy it!   
 
@@ -37,8 +31,12 @@ Enjoy it!
 
 ## History of versions
 
-- v1.2 (29/09/2021)< small optimization in PEEK
-- v1.1 (28/06/2018)<Add slot access functions
+- v1.4 (10/12/2024) It has been divided into two libraries: memoryZ80 and memoryMSXSlots
+
+### memory_MSX.rel
+- v1.3 (09/02/2024) Update to SDCC (4.1.12) Z80 calling conventions. Separated into two libraries.
+- v1.2 (29/09/2021) Small optimization in PEEK
+- v1.1 (28/06/2018) Add slot access functions
 - v1.0 (01/03/2016) First version
 
 <br/>
@@ -47,33 +45,9 @@ Enjoy it!
 
 ## Requirements
 
-- [Small Device C Compiler (SDCC) v4.1](http://sdcc.sourceforge.net/)
+- [Small Device C Compiler (SDCC) v4.4](http://sdcc.sourceforge.net/)
 - [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
-<br/>
 
----
 
-## Acknowledgments
-  
-I want to give a special thanks to all those who freely share their knowledge with the MSX developer community.
 
-- Avelino Herrera > [`WEB`](http://msx.avelinoherrera.com/index_es.html)
-- Nerlaska > [`Blog`](http://albertodehoyonebot.blogspot.com.es)
-- Marq > [`Marq`](http://www.kameli.net/marq/)
-- MSXKun/Paxanga soft > [`WEB`](http://paxangasoft.retroinvaders.com/)
-- Fubukimaru [`gitHub`](https://github.com/Fubukimaru)
-- Andrear > [`Blog`](http://andrear.altervista.org/home/msxsoftware.php)
-- Sapphire/Z80ST > [`WEB`](http://z80st.auic.es/)
-- Fernando García > [`Video Tutorial`](http://www.z80st.es/cursos/bitvision-assembler)
-- Ramones > [`MSXblog`](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [`MSXbanzai`](http://msxbanzai.tni.nl/dev/faq.html)
-- Eric Boez > [`gitHub`](https://github.com/ericb59)
-- MSX Assembly Page > [`WEB`](http://map.grauw.nl/resources/msxbios.php)
-- Portar MSX Tech Doc > [`WEB`](https://problemkaputt.de/portar.htm)
-- MSX Resource Center > [`WEB`](http://www.msx.org/)
-- Karoshi MSX Community > [`WEB`](http://karoshi.auic.es/)
-- BlueMSX emulator >> [`WEB`](http://www.bluemsx.com/)
-- OpenMSX emulator >> [`WEB`](http://openmsx.sourceforge.net/)
-- [`WebMSX`](https://webmsx.org/) emulator by Paulo A. Peccin >> [`gitHub`](https://github.com/ppeccin/webmsx)
-- fMSX emulator by Marat Fayzullin [`WEB`](https://fms.komkon.org/fMSX/)
-- Meisei emulator by Hap >> `?`
