@@ -1,9 +1,10 @@
 # Memory MSX SDCC Library (fR3eL Project)
 
-| :--- | :--- |
-| Architecture | MSX |
-| Format | C Object (SDCC .rel) |
-| Programming language | C and Z80 assembler |
+<table>
+<tr><td>Architecture</td><td>MSX</td></tr>
+<tr><td>Format</td><td>C Object (SDCC .rel)</td></tr>
+<tr><td>Programming language</td><td>C and Z80 assembler</td></tr>
+</table>
 
 <br/>
 
@@ -11,7 +12,9 @@
 
 ## Description
 
-This project provides two libraries for accessing the memory of MSX systems. 
+This project provides two libraries for accessing the memory of MSX systems:
+- **memoryZ80** provides you with functions to read or write to the memory. 
+- **memoryMSXSlots** allows you to configure the pages of the slots and subslots.
 
 Use them for developing MSX applications using Small Device C Compiler (SDCC).
 
