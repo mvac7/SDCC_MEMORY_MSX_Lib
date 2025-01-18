@@ -1,25 +1,25 @@
 /* =============================================================================
-   Memory MSX Slots Library (fR3eL Project)
-   Version: 1.4 (19/12/2024)
-   Author: mvac7/303bcn
-   Architecture: MSX
-   Format: C Object (SDCC .rel)
-   Programming language: C and z80 assembler
-   Compiler: SDCC 4.1.12 or newer 
+Memory Slots MSX Library (fR3eL Project)
+Version: 1.4 (19/12/2024)
+Author: mvac7/303bcn
+Architecture: MSX
+Format: C Object (SDCC .rel)
+Programming language: C and z80 assembler
+Compiler: SDCC 4.4 or newer 
 
-   Description:
-     Library for accessing page slots and subslots on MSX systems.
-   
-   History of versions:
-   - v1.4 (10/12/2024) This library contains only the paging management of 
-                       the MSX system.
-   - v1.3 (09/02/2024) Update to SDCC (4.1.12) Z80 calling conventions
-   - v1.2 (29/09/2021) small optimization in PEEK
-   - v1.1 (28/06/2018) add slot access functions
-   - v1.0 (01/03/2016) First version  
+Description:
+ Library for accessing page slots and subslots on MSX systems.
+
+History of versions:
+- v1.4 (10/12/2024) This library contains only the paging management of 
+				   the MSX system.
+- v1.3 (09/02/2024) Update to SDCC (4.1.12) Z80 calling conventions
+- v1.2 (29/09/2021) small optimization in PEEK
+- v1.1 (28/06/2018) add slot access functions
+- v1.0 (01/03/2016) First version  
 ============================================================================= */
 
-#include "../include/memoryMSXSlots.h"
+#include "../include/memory_Slots_MSX.h"
 #include "../include/msxSystemVariables.h"
 
 #define  PPIregA 0xA8

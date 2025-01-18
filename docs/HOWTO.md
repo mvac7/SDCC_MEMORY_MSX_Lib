@@ -1,6 +1,10 @@
 # How to use the Memory MSX Library
 
----
+| Attention! |
+| :---       |
+| The following document has been written using an English translator.<br/>You can participate in the improvement of this document, transmitting your corrections or suggestions in the issues of this project or the main fR3eL project.<br/>Thanks for understanding. |
+
+<br/>
 
 ## Index
 
@@ -30,16 +34,16 @@
 
 ## 1 Description
 
-This project provides two libraries for accessing the memory of MSX systems. 
+This project provides two libraries for accessing the memory of MSX systems:
+- **memoryZ80** provides you with functions to read or write to the memory. 
+- **memoryMSXSlots** allows you to configure the pages of the slots and subslots.
 
-Use them for developing MSX applications using Small Device C Compiler (SDCC).
+This project is an Open Source library. 
+You can add part or all of this code in your application development or include it in other libraries/engines.
+
+Use them for developing MSX applications using Small Device C Compiler [`SDCC`](http://sdcc.sourceforge.net/).
 
 This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
-
-For more information about the MSX memory paging system, you can find the [MSX Assembly Page](http://map.grauw.nl/resources/msx_io_ports.php#ppi).
-
-Enjoy it! 
-
 
 <br/>
 
@@ -70,7 +74,7 @@ This library provides you with functions to read or write to the memory.
 <tr><th>Function</th><td colspan=2>PEEK(address)</td></tr>
 <tr><th>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Value</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>char value;<br/>value = PEEK(0xE000);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>char value;<br/>value = PEEK(0xE000);</code></td></tr>
 </table>
 
 
@@ -82,7 +86,7 @@ This library provides you with functions to read or write to the memory.
 <tr><th>Function</th><td colspan=2>PEEKW(address)</td></tr>
 <tr><th>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><th>Output</th><td>[unsigned int]</td><td>Value</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>unsigned int value;<br/>value = PEEKW(0xE000);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>unsigned int value;<br/>value = PEEKW(0xE000);</code></td></tr>
 </table>
 
             
@@ -95,7 +99,7 @@ This library provides you with functions to read or write to the memory.
 <tr><th rowspan=2>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><td>[char]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><pre>POKE(0xE000,0xFF);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>POKE(0xE000,0xFF);</code></td></tr>
 </table>
 
 
@@ -108,7 +112,7 @@ This library provides you with functions to read or write to the memory.
 <tr><th rowspan=2>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><td>[unsigned int]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><pre>POKEW(0xE000,12345);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>POKEW(0xE000,12345);</code></td></tr>
 </table>
 
             
@@ -122,7 +126,7 @@ This library provides you with functions to read or write to the memory.
 <tr><td>[unsigned int]</td><td>Destination RAM address</td></tr>
 <tr><td>[unsigned int]</td><td>Length</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><pre>CopyRAM(0x0000,0xE000,128);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>CopyRAM(0x0000,0xE000,128);</code></td></tr>
 </table>
 
 
@@ -136,10 +140,12 @@ This library provides you with functions to read or write to the memory.
 <tr><td>[unsigned int]</td><td>Length</td></tr>
 <tr><td>[char]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><pre>FillRAM(0xE000,1024,0xFF);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>FillRAM(0xE000,1024,0xFF);</code></td></tr>
 </table>
 
+<br/>
 
+---
 
 ### 3.2 memoryMSXSlots · Manage to memory pages
 
@@ -155,10 +161,10 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <table>
 <tr><th colspan=3 align="left">GetSlotFromPage</th></tr>
 <tr><td colspan=3>Returns the slot number of the indicated page.</td></tr>
-<tr><th>Function</th><td colspan=2>GetSlotFromPage(page)</td></tr>
+<tr><th>Function</th><td colspan=2>char GetSlotFromPage(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Slot (0-3)</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>char value;<br/>value = GetSlotFromPage(2);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>char value;<br/>value = GetSlotFromPage(2);</code></td></tr>
 </table>
 
 
@@ -171,7 +177,7 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><pre>char slot;<br/>slot = GetSlotFromPage(1);<br/>SetPageSlot(2,slot);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>char slot;<br/>slot = GetSlotFromPage(1);<br/>SetPageSlot(2,slot);</code></td></tr>
 </table>
 
 
@@ -180,7 +186,7 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <table>
 <tr><th colspan=3 align="left">IsSlotExpanded</th></tr>
 <tr><td colspan=3>Returns if the slot is of the expanded type.</td></tr>
-<tr><th>Function</th><td colspan=2>IsSlotExpanded(slot)</td></tr>
+<tr><th>Function</th><td colspan=2>boolean IsSlotExpanded(slot)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td>[boolean]</td><td>true = Yes; false = No</td></tr>
 <tr><th>Example:</th><td colspan=2><code>if(IsSlotExpanded(2)==true) PRINT("Yes");</code></td></tr>
@@ -192,10 +198,10 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <table>
 <tr><th colspan=3 align="left">GetSubslotFromPage</th></tr>
 <tr><td colspan=3>Returns the Subslot number of the indicated page (For expanded slots)</td></tr>
-<tr><th>Function</th><td colspan=2>GetSubslotFromPage(page)</td></tr>
+<tr><th>Function</th><td colspan=2>char GetSubslotFromPage(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Subslot (0-3)</td></tr>
-<tr><th>Example:</th><td colspan=2><pre>char subslot;<br/>if(IsSlotExpanded(1)) subslot = GetSubslotFromPage(1);</pre></td></tr>
+<tr><th>Example:</th><td colspan=2><code>char subslot;<br/>if(IsSlotExpanded(1)) subslot = GetSubslotFromPage(1);</code></td></tr>
 </table>
             
 
@@ -208,13 +214,13 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Subslot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><pre>
+<tr><th>Example:</th><td colspan=2><code>
 if(IsSlotExpanded(3))
 {
   SetPageSlot(2,3);
   SetPageSubslot(2,1);
 }
-</pre></td></tr>
+</code></td></tr>
 </table>
 
 

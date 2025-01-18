@@ -1,4 +1,4 @@
-# Memory MSX SDCC Library (fR3eL Project)
+# MSX Memory SDCC Libraries (fR3eL Project)
 
 <table>
 <tr><td>Architecture</td><td>MSX</td></tr>

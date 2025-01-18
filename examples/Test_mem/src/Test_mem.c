@@ -1,21 +1,17 @@
 /* =============================================================================
-   Test Memory MSX Libraries
-   Version: 1.3 (10/12/2024)
-   Author: mvac7/303bcn
-   Architecture: MSX
-   Format: ROM 8K
-   Programming language: C
-   Compiler: SDCC 4.4 or newer 
-
-   Description:
-     Testing of the memoryZ80 and memoryMSXSlots libraries functions.
-     
-   History of versions:
-     - v1.3 (10/12/2024) Separation in two libraries: memoryZ80 and memoryMSXSlots
-     - v1.2 (12/02/2024) Z80 calling conventions (SDCC 4.1.12)
-     - v1.1 (28/06/2018)
-     - v1.0 (11/02/2016)
-     
+Test memory_Z80 and  memory_Slots_MSX Libraries
+Version: 1.3 (10/12/2024)
+Author: mvac7/303bcn
+Architecture: MSX
+Format: MSX ROM 8K
+Programming language: C
+Compiler: SDCC 4.4 or newer 
+ 
+History of versions:
+ - v1.3 (10/12/2024) Separation in two libraries: memoryZ80 and memoryMSXSlots
+ - v1.2 (12/02/2024) Z80 calling conventions (SDCC 4.1.12)
+ - v1.1 (28/06/2018)
+ - v1.0 (11/02/2016)     
 ============================================================================= */
 
 #include "../include/newTypes.h"
@@ -23,8 +19,8 @@
 #include "../include/msxBIOS.h"
 
 #include "../include/textmode_MSX.h"
-#include "../include/memoryZ80.h"
-#include "../include/memoryMSXSlots.h"
+#include "../include/memory_Z80.h"
+#include "../include/memory_Slots_MSX.h"
 
 
 

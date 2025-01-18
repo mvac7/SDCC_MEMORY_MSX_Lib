@@ -1,6 +1,6 @@
 XL3
 H 9 areas 6 global symbols
-M memoryMSXSlots
+M memory_Slots_MSX
 O -mz80
 S .__.ABS. Def000000
 A _CODE size 77 flags 0 addr 0
