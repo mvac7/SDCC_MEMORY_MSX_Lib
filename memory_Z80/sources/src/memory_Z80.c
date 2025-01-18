@@ -1,21 +1,21 @@
 /* =============================================================================
-   Z80 Memory Library (fR3eL Project)
-   Version: 1.4 (10/12/2024)
-   Author: mvac7/303bcn
-   Architecture: MSX
-   Format: C Object (SDCC .rel)
-   Programming language: C and z80 assembler
-   Compiler: SDCC 4.1.12 or newer 
+Memory Z80 Library (fR3eL Project)
+Version: 1.4 (10/12/2024)
+Author: mvac7/303bcn
+Architecture: MSX
+Format: C Object (SDCC .rel)
+Programming language: C and z80 assembler
+Compiler: SDCC 4.4 or newer 
 
-   Description:
-    Library with basic functions for working with memory on Z80 processors
-   
-   History of versions:
-   - v1.4 (10/12/2024) Page management has been removed and added to a new library.
-   - v1.3 (09/02/2024) Update to SDCC (4.1.12) Z80 calling conventions
-   - v1.2 (29/09/2021) small optimization in PEEK
-   - v1.1 (28/06/2018) add slot access functions
-   - v1.0 (01/03/2016) First version  
+Description:
+Library with basic functions for working with memory on Z80 processors
+
+History of versions:
+- v1.4 (10/12/2024) Page management has been removed and added to a new library.
+- v1.3 (09/02/2024) Update to SDCC (4.1.12) Z80 calling conventions
+- v1.2 (29/09/2021) small optimization in PEEK
+- v1.1 (28/06/2018) add slot access functions
+- v1.0 (01/03/2016) First version  
 ============================================================================= */
 
 #include "../include/memory_Z80.h"

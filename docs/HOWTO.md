@@ -74,9 +74,16 @@ This library provides you with functions to read or write to the memory.
 <tr><th>Function</th><td colspan=2>PEEK(address)</td></tr>
 <tr><th>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Value</td></tr>
-<tr><th>Example:</th><td colspan=2><code>char value;<br/>value = PEEK(0xE000);</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	char value;
+	value = PEEK(0xE000);
+```
+
+<br/>  
 
 #### 3.1.2 PEEKW 
 
@@ -86,10 +93,17 @@ This library provides you with functions to read or write to the memory.
 <tr><th>Function</th><td colspan=2>PEEKW(address)</td></tr>
 <tr><th>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><th>Output</th><td>[unsigned int]</td><td>Value</td></tr>
-<tr><th>Example:</th><td colspan=2><code>unsigned int value;<br/>value = PEEKW(0xE000);</code></td></tr>
 </table>
 
-            
+##### Example:
+
+```c
+	unsigned int value;
+	value = PEEKW(0xE000);
+```
+
+<br/>  
+
 #### 3.1.3 POKE
 
 <table>
@@ -99,9 +113,15 @@ This library provides you with functions to read or write to the memory.
 <tr><th rowspan=2>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><td>[char]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>POKE(0xE000,0xFF);</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	POKE(0xE000,0xFF);
+```
+
+<br/>  
 
 #### 3.1.4 POKEW
            
@@ -112,10 +132,16 @@ This library provides you with functions to read or write to the memory.
 <tr><th rowspan=2>Input</th><td>[unsigned int]</td><td>Memory address</td></tr>
 <tr><td>[unsigned int]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>POKEW(0xE000,12345);</code></td></tr>
 </table>
 
-            
+##### Example:
+
+```c
+	POKEW(0xE000,12345);
+```
+
+<br/>  
+
 #### 3.1.5 CopyRAM
 
 <table>
@@ -126,9 +152,15 @@ This library provides you with functions to read or write to the memory.
 <tr><td>[unsigned int]</td><td>Destination RAM address</td></tr>
 <tr><td>[unsigned int]</td><td>Length</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>CopyRAM(0x0000,0xE000,128);</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	CopyRAM(0x0000,0xE000,128);
+```
+
+<br/>  
 
 #### 3.1.6 FillRAM
 
@@ -140,10 +172,15 @@ This library provides you with functions to read or write to the memory.
 <tr><td>[unsigned int]</td><td>Length</td></tr>
 <tr><td>[char]</td><td>Value</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>FillRAM(0xE000,1024,0xFF);</code></td></tr>
 </table>
 
-<br/>
+##### Example:
+
+```c
+	FillRAM(0xE000,1024,0xFF);
+```
+
+<br/>  
 
 ---
 
@@ -164,9 +201,16 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th>Function</th><td colspan=2>char GetSlotFromPage(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Slot (0-3)</td></tr>
-<tr><th>Example:</th><td colspan=2><code>char value;<br/>value = GetSlotFromPage(2);</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	char value;
+	value = GetSlotFromPage(2);
+```
+
+<br/>  
 
 #### 3.2.8 SetPageSlot
 
@@ -177,9 +221,17 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>char slot;<br/>slot = GetSlotFromPage(1);<br/>SetPageSlot(2,slot);</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	char slot;
+	slot = GetSlotFromPage(1);
+	SetPageSlot(2,slot);
+```
+
+<br/>  
 
 #### 3.2.9 IsSlotExpanded
 
@@ -189,9 +241,15 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th>Function</th><td colspan=2>boolean IsSlotExpanded(slot)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Slot (0-3)</td></tr>
 <tr><th>Output</th><td>[boolean]</td><td>true = Yes; false = No</td></tr>
-<tr><th>Example:</th><td colspan=2><code>if(IsSlotExpanded(2)==true) PRINT("Yes");</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	if(IsSlotExpanded(2)==true) PRINT("Yes");
+```
+
+<br/>  
 
 #### 3.2.10 GetSubslotFromPage
 
@@ -201,9 +259,16 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th>Function</th><td colspan=2>char GetSubslotFromPage(page)</td></tr>
 <tr><th>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><th>Output</th><td>[char]</td><td>Subslot (0-3)</td></tr>
-<tr><th>Example:</th><td colspan=2><code>char subslot;<br/>if(IsSlotExpanded(1)) subslot = GetSubslotFromPage(1);</code></td></tr>
 </table>
-            
+
+##### Example:
+
+```c
+	char subslot;
+	if(IsSlotExpanded(1)) subslot = GetSubslotFromPage(1);
+```
+
+<br/>            
 
 #### 3.2.11 SetPageSubslot
 
@@ -214,15 +279,17 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 <tr><th rowspan=2>Input</th><td>[char]</td><td>Page (0-3)</td></tr>
 <tr><td>[char]</td><td>Subslot (0-3)</td></tr>
 <tr><th>Output</th><td colspan=2> --- </td></tr>
-<tr><th>Example:</th><td colspan=2><code>
-if(IsSlotExpanded(3))
-{
-  SetPageSlot(2,3);
-  SetPageSubslot(2,1);
-}
-</code></td></tr>
 </table>
 
+##### Example:
+
+```c
+	if(IsSlotExpanded(3))
+	{
+	  SetPageSlot(2,3);
+	  SetPageSubslot(2,1);
+	}
+```
 
 <br/>
 

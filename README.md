@@ -13,8 +13,8 @@
 ## Description
 
 This project provides two libraries for accessing the memory of MSX systems:
-- **memoryZ80** provides you with functions to read or write to the memory. 
-- **memoryMSXSlots** allows you to configure the pages of the slots and subslots.
+- **memory_Z80.rel** provides you with functions to read or write to the memory. 
+- **memory_Slots_MSX.rel** allows you to configure the pages of the slots and subslots.
 
 Use them for developing MSX applications using Small Device C Compiler (SDCC).
 
@@ -34,7 +34,11 @@ Enjoy it!
 
 ## History of versions
 
-- v1.4 (10/12/2024) It has been divided into two libraries: memoryZ80 and memoryMSXSlots
+### memory_Z80.rel
+- v1.4 (10/12/2024) Page management has been removed and added to a new library (memory_Slots_MSX.rel).
+
+### memory_Slots_MSX.rel
+- v1.4 (10/12/2024) memory_MSX has been divided into two libraries: memory_Z80 and memory_Slots_MSX. This library contains only the paging management of the MSX system.
 
 ### memory_MSX.rel
 - v1.3 (09/02/2024) Update to SDCC (4.1.12) Z80 calling conventions. Separated into two libraries.
